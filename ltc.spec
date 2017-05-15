@@ -3,8 +3,8 @@
 %define devname	%mklibname %{name} -d
 
 Name:		ltc
-Version:	1.1.1
-Release:	2
+Version:	1.3.0
+Release:	1
 Summary:	Linear (or Longitudinal) Time-code is an encoding of SMPTE time-code data
 License:	LGPLv3
 Group:		System/Libraries
