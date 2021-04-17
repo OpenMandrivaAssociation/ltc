@@ -3,7 +3,7 @@
 %define devname	%mklibname %{name} -d
 
 Name:		ltc
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 Summary:	Linear (or Longitudinal) Time-code is an encoding of SMPTE time-code data
 License:	LGPLv3
@@ -56,9 +56,9 @@ will use lib%{name}.
 %setup -q -n lib%{name}-%{version}
 
 %build
-%configure2_5x
-%make
+%configure
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 find %{buildroot} -regex ".*\(a\|la\)$" -exec rm '{}' \;
