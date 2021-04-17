@@ -46,7 +46,7 @@ This package contains the files for developing applications which
 will use lib%{name}.
 
 %files -n %{devname}
-%{_mandir}/man3/ltc.h.3.xz
+%{_mandir}/man3/ltc.h.3.*
 %{_libdir}/lib%{name}.so
 %{_includedir}/ltc.h
 %{_libdir}/pkgconfig/ltc.pc
