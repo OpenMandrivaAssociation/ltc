@@ -1,15 +1,15 @@
 %define major	11
-%define libname	%mklibname %{name} %major
+%define libname	%mklibname %{name}
 %define devname	%mklibname %{name} -d
 
 Name:		ltc
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 Summary:	Linear (or Longitudinal) Time-code is an encoding of SMPTE time-code data
 License:	LGPLv3
 Group:		System/Libraries
 Url:		https://github.com/x42/libltc
-Source0:	https://github.com/downloads/x42/libltc/lib%{name}-%{version}.tar.gz
+Source0:	https://github.com/x42/libltc/releases/download/v%{version}/libltc-%{version}.tar.gz
 
 %description
 Linear (or Longitudinal) Time-code (LTC) is an encoding of SMPTE time-code data
@@ -22,6 +22,7 @@ libltc is the successor of libltcsmpte.
 %package -n %{libname}
 Summary:	Shared library for LTC
 Group:		System/Libraries
+%rename %{libname}11
 
 %description -n %{libname}
 Linear (or Longitudinal) Time-code (LTC) is an encoding of SMPTE time-code data
@@ -53,12 +54,11 @@ will use lib%{name}.
 
 #---------------------------------
 %prep
-%setup -q -n lib%{name}-%{version}
+%autosetup -p1 -n lib%{name}-%{version}
+%configure
 
 %build
-%configure
 %make_build
 
 %install
 %make_install
-find %{buildroot} -regex ".*\(a\|la\)$" -exec rm '{}' \;
