@@ -4,7 +4,7 @@
 
 Name:		ltc
 Version:	1.3.2
-Release:	2
+Release:	3
 Summary:	Linear (or Longitudinal) Time-code is an encoding of SMPTE time-code data
 License:	LGPLv3
 Group:		System/Libraries
